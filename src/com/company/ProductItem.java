@@ -15,6 +15,14 @@ public class ProductItem extends Product {
         this.type = type;
     }
 
+    public ProductType getType() {
+        return this.type;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
     @Override
     public String toString() {
         return this.info().toString();

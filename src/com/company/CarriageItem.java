@@ -21,6 +21,10 @@ public class CarriageItem extends Carriage {
         return this.isSet;
     }
 
+    public ProductType getType() {
+        return this.type;
+    }
+
     public void setItem(ProductItem item) {
         this.currentItem = item;
         this.isSet = true;
@@ -28,12 +32,22 @@ public class CarriageItem extends Carriage {
 
     @Override
     public String toString() {
+        String s = "";
+        if (this.isSet) {
+            s += String.format("____________________________\n" +
+                    "|                            |\n" +
+                    "  %s    \n" +
+                    "|____________________________|\n" +
+                    "/oo OOOOO oo`      ooo  'o!o!o\n", this.currentItem);
+        } else {
+            s += String.format("____________________________\n" +
+                    "|                            |\n" +
+                    "  %s    \n" +
+                    "|____________________________|\n" +
+                    "/oo OOOOO oo`      ooo  'o!o!o\n", this.info().toString());
+        }
 
-        String s = String.format("____________________________\n" +
-                "|                            |\n" +
-                "  %s    \n" +
-                "|____________________________|\n" +
-                "/oo OOOOO oo`      ooo  'o!o!o\n", this.info().toString());
+
         return s;
     }
 
